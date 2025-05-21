@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Debate Assistant</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-balance-scale"></i>
+                    <h1>AI Debate Assistant</h1>
+                </div>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#how-it-works">How it Works</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Elevate Your Debate Skills</h2>
+                    <p>Prepare more effectively with AI-powered counterarguments and logical fallacy detection</p>
+                </div>
+            </section>
+
+            <section class="debate-form-container">
+                <div class="debate-form">
+                    <div class="form-header">
+                        <button class="tab-btn active" data-mode="counterarguments">Generate Counterarguments</button>
+                        <button class="tab-btn" data-mode="fallacies">Detect Logical Fallacies</button>
+                    </div>
+                    
+                    <div class="form-content">
+                        <div class="input-group">
+                            <label for="debate-topic">Debate Topic:</label>
+                            <input type="text" id="debate-topic" placeholder="Enter the topic of debate..." required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="perspective">Your Perspective/Argument (Optional):</label>
+                            <textarea id="perspective" placeholder="Enter your perspective or specific argument to analyze..."></textarea>
+                        </div>
+                        
+                        <div class="form-desc counterarguments-desc active">
+                            <p>Generate strong opposing arguments to prepare for challenging perspectives.</p>
+                        </div>
+                        
+                        <div class="form-desc fallacies-desc">
+                            <p>Analyze your arguments for logical fallacies and reasoning flaws.</p>
+                        </div>
+                        
+                        <button id="analyze-btn" class="primary-btn">
+                            <span>Analyze</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="results-container" id="results-container">
+                <div class="results-header">
+                    <h3>Analysis Results</h3>
+                    <div class="results-actions">
+                        <button id="copy-btn" class="icon-btn" title="Copy to clipboard">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                        <button id="download-btn" class="icon-btn" title="Download as PDF">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="results-content" id="results-content">
+                    <div class="loading-spinner" id="loading-spinner">
+                        <div class="spinner"></div>
+                        <p>Analyzing with AI...</p>
+                    </div>
+                    <div id="results-text"></div>
+                </div>
+            </section>
+
+            <section class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Advanced AI Analysis</h3>
+                    <p>Powered by state-of-the-art language models to provide insightful debate assistance</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Multiple Perspectives</h3>
+                    <p>Explore various viewpoints and strengthen your debate preparation</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Fallacy Detection</h3>
+                    <p>Identify and learn about logical fallacies in your arguments</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Fast Results</h3>
+                    <p>Get comprehensive analysis in seconds to improve your debate strategy</p>
+                </div>
+            </section>
+            
+            <section id="about" class="about">
+                <h2>About AI Debate Assistant</h2>
+                <p>AI Debate Assistant is a powerful tool designed to help debaters, students, and professionals prepare for debates and improve their argumentation skills. By leveraging advanced AI models, our platform provides high-quality counterarguments and logical fallacy detection to enhance your debate preparation process.</p>
+                <p>Whether you're preparing for a formal debate competition, classroom discussion, or business negotiation, our tool helps you anticipate opposing viewpoints and strengthen your own arguments.</p>
+            </section>
+            
+            <section id="how-it-works" class="how-it-works">
+                <h2>How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Enter Your Topic</h3>
+                            <p>Start by entering the debate topic you're preparing for</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Add Your Perspective</h3>
+                            <p>Optionally provide your position or argument for more tailored feedback</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Choose Analysis Type</h3>
+                            <p>Select between counterargument generation or logical fallacy detection</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Review Results</h3>
+                            <p>Get detailed analysis to strengthen your debate preparation</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer id="contact">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AI Debate Assistant</h3>
+                    <p>Elevating debate preparation through artificial intelligence</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-envelope"></i> devyanshvakharia2510@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> (+91) 8208630585</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="https://github.com/Devyansh-Vakharia" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/devyansh-vakharia-98856a281" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://instagram.com/devyansh.vakharia/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 AI Debate Assistant. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
