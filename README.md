@@ -2,6 +2,8 @@
 
 A professional web application that helps users prepare for debates by generating counterarguments and detecting logical fallacies.
 
+![Start Your Debate Points](./screenshot/image-1.png)
+
 ## Features
 
 - Generate balanced counterarguments for any debate topic
